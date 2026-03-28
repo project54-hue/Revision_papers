@@ -6,7 +6,6 @@
 <title>KMTC Examination Revision Portal</title>
 
 <style>
-
 /* ===== GENERAL STYLE ===== */
 body{
     margin:0;
@@ -123,7 +122,6 @@ footer{
     background:#111;
     margin-top:30px;
 }
-
 </style>
 </head>
 
@@ -131,22 +129,22 @@ footer{
 
 <header>
 
-<!-- KMTC Logo -->
-<div class="logo">
-    <img src="images/kmtc.jpg" alt="KMTC Logo">
-</div>
+  <!-- KMTC Logo -->
+  <div class="logo">
+      <img src="images/kmtc.jpg" alt="KMTC Logo" onerror="this.style.display='none'">
+  </div>
 
-<h1>KMTC Examination Revision Portal</h1>
-<p>
-A medical education platform issuing revision past papers and study notes
-to help students improve knowledge, clinical reasoning, and examination performance.
-</p>
+  <h1>KMTC Examination Revision Portal</h1>
+  <p>
+    A medical education platform issuing revision past papers and study notes
+    to help students improve knowledge, clinical reasoning, and examination performance.
+  </p>
 
-<!-- Introduction Images -->
-<div class="intro-images">
-    <img src="images/students.jpg" alt="KMTC Students">
-    <img src="images/lab.jpg" alt="Clinical Laboratory">
-</div>
+  <!-- Introduction Images -->
+  <div class="intro-images">
+      <img src="images/student.jpg" alt="KMTC Student" onerror="this.style.backgroundColor='#333'; this.alt='Image missing'">
+      <img src="images/lab.jpg" alt="Clinical Laboratory" onerror="this.style.backgroundColor='#333'; this.alt='Image missing'">
+  </div>
 
 </header>
 
@@ -248,12 +246,10 @@ in examinations through structured revision resources.
 </footer>
 
 <script>
-
 /* SWITCH SECTIONS */
 function showSection(sectionId){
     let sections = document.querySelectorAll('.section');
     sections.forEach(sec => sec.style.display='none');
-
     document.getElementById(sectionId).style.display='block';
 }
 
@@ -261,13 +257,11 @@ function showSection(sectionId){
 function searchContent(){
     let input = document.getElementById("search").value.toLowerCase();
     let cards = document.querySelectorAll(".card");
-
     cards.forEach(card=>{
         let text = card.innerText.toLowerCase();
         card.style.display = text.includes(input) ? "block" : "none";
     });
 }
-
 </script>
 
 </body>

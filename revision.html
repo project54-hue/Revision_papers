@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KMTC Examination Revision Portal</title>
+
+<style>
+
+/* ===== GENERAL STYLE ===== */
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:2.3em;
+}
+
+header p{
+    opacity:0.85;
+}
+
+/* NAVIGATION */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    background:#111;
+    padding:15px;
+}
+
+nav button{
+    background:#00c6ff;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+nav button:hover{
+    background:#0072ff;
+    color:white;
+}
+
+/* CONTAINER */
+.container{
+    padding:30px;
+    max-width:900px;
+    margin:auto;
+}
+
+/* CARDS */
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:22px;
+    margin-bottom:20px;
+    border-radius:12px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.card h3{
+    margin-top:0;
+    color:#00e5ff;
+}
+
+/* SEARCH */
+input{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    margin-top:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>KMTC Examination Revision Portal</h1>
+<p>
+A medical education platform issuing revision past papers and study notes
+to help students improve knowledge, clinical reasoning, and examination performance.
+</p>
+</header>
+
+<nav>
+<button onclick="showSection('papers')">Revision Papers</button>
+<button onclick="showSection('notes')">Study Notes</button>
+<button onclick="showSection('bio')">Medical Bio Info</button>
+<button onclick="showSection('about')">About</button>
+</nav>
+
+<div class="container">
+
+<input type="text" id="search" placeholder="Search revision materials..." onkeyup="searchContent()">
+
+<!-- REVISION PAPERS -->
+<div id="papers" class="section">
+<div class="card">
+<h3>KMTC Revision Past Papers</h3>
+<p>
+Structured examination papers designed to simulate real KMTC assessments,
+allowing students to practice clinical thinking, recall medical concepts,
+and improve examination readiness.
+</p>
+</div>
+
+<div class="card">
+<h3>Clinical Revision Resources</h3>
+<p>
+Practice materials supporting competency-based learning in health sciences
+education and professional training.
+</p>
+</div>
+</div>
+
+<!-- NOTES -->
+<div id="notes" class="section" style="display:none;">
+<div class="card">
+<h3>Medical Study Notes</h3>
+<p>
+Concise revision notes summarizing essential biomedical and clinical
+principles for quick review before examinations.
+</p>
+</div>
+
+<div class="card">
+<h3>Exam Preparation Summaries</h3>
+<p>
+Focused learning materials that reinforce understanding of core medical
+concepts and patient-care fundamentals.
+</p>
+</div>
+</div>
+
+<!-- MEDICAL BIO INFO -->
+<div id="bio" class="section" style="display:none;">
+<div class="card">
+<h3>Medical Education Objectives</h3>
+<ul>
+<li>Strengthen biomedical science knowledge.</li>
+<li>Improve clinical reasoning and decision-making.</li>
+<li>Enhance patient-centered healthcare understanding.</li>
+<li>Promote evidence-based medical learning.</li>
+<li>Prepare students for professional clinical practice.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Student Learning Outcomes</h3>
+<p>
+Students using this platform are expected to develop improved comprehension
+of medical terminology, disease processes, pharmacological principles,
+and safe clinical practice standards required in healthcare training.
+</p>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section" style="display:none;">
+<div class="card">
+<h3>About This Portal</h3>
+<p>
+This website issues KMTC examination revision past papers and study notes
+to support health sciences students. The platform aims to enhance academic
+performance, promote continuous learning, and prepare students for clinical
+and professional healthcare responsibilities.
+</p>
+
+<p>
+The website helps students improve their understanding and perform better
+in examinations through structured revision resources.
+</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 KMTC Examination Revision Portal | Medical Learning Resource</p>
+</footer>
+
+<script>
+
+/* SWITCH SECTIONS */
+function showSection(sectionId){
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.style.display='none');
+
+    document.getElementById(sectionId).style.display='block';
+}
+
+/* SEARCH FUNCTION */
+function searchContent(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? "block" : "none";
+    });
+}
+
+</script>
+
+</body>
+</html>
